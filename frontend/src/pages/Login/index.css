@@ -1,0 +1,133 @@
+.login-container {
+    height: 100vh;
+    font-family: DM Sans;
+}
+
+.login-part-1 {
+    height: 40%;
+}
+
+.login-part-1-image {
+    height: 100%;
+    width: 100%;
+}
+
+.login-part-2 {
+    height: 50%;
+    padding: 20px;
+}
+
+.login-heading {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: DM Sans;
+}
+
+.login-input-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.login-username {
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 1%;
+}
+
+.input-element {
+    background-color: #e2e8f0;
+    background-size: cover;
+    width: 100%;
+    height: 40px;
+    border-radius: 2px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 12px;
+    outline: none;
+    border-width: 0px;
+    color: #171f46;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.login-button-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.login-button {
+    width: 100%;
+    height: 40px;
+    background-color: #f7931e;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+.login-error-message {
+    color: #ef4444;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.login-logo-container {
+    display: none;
+}
+
+.login-logo {}
+
+@media screen and (min-width: 567px) {
+    .login-container {
+        display: flex;
+    }
+
+    .login-part-1 {
+        order: 2;
+        width: 50%;
+    }
+
+    .login-part-2 {
+        width: 50%;
+        order: 1;
+    }
+
+    .login-part-1-image {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .login-part-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-card-sm {
+        width: 300px;
+    }
+
+    .login-heading {
+        text-align: center;
+    }
+
+    .login-logo-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-name {
+        color: #f7931e;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+    }
+}

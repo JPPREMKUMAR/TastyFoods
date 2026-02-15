@@ -1,0 +1,126 @@
+.navbar-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-family: DM Sans;
+    background-color: #f8fafc;
+    background-size: cover;
+}
+
+.navbar-part-1 {
+    display: flex;
+    gap: 6px;
+    outline: none;
+    border-width: 0px;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    width: 39px;
+    height: 36px;
+}
+
+.navbar-title {
+    color: #f7931e;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.navbar-part-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-menu-button {
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border-width: 0px;
+    align-self: center;
+}
+
+.navbar-menu {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar-part-2-md {
+    display: none;
+}
+
+.navbar-link {
+    color: #f7931e;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar-links-container {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-logout-button {
+    color: #ffffff;
+    background-color: #f7931e;
+    outline: none;
+    border-width: 0px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.navbar-link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-part-2-sm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-menu-sm {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-cross-container {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 567px) {
+    .navbar-card {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .navbar-part-2 {
+        display: none;
+    }
+
+    .navbar-part-2-md {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-menu-sm {
+        display: none;
+    }
+}

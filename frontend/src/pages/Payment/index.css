@@ -1,0 +1,56 @@
+.payment-container {
+    padding: 30px;
+}
+
+
+.order-summary-container {
+    padding: 10px;
+    display: none;
+}
+
+.order-summary-heading {
+    color: #3E4C59;
+    font-size: 24px;
+    font-family: "Roboto";
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.order-list-of-items {
+    margin: 0px;
+    padding: 0px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.item-text {
+    color: #3E4C59;
+    font-size: 15px;
+    font-family: DM Sans;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    cursor: pointer;
+}
+
+.text-span {
+    font-weight: 500;
+}
+
+.payment-details-container {
+    padding: 10px;
+    margin-bottom: 80px;
+}
+
+
+.option-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
