@@ -14,10 +14,16 @@ const Payment = () => {
 
 
 
-    const { cartList, totalCartPrice, navigate, setOptionValue, optionValue } = useContext(MainContext)
+    const { cartList, totalCartPrice, navigate, setOptionValue, optionValue, onSetOrdersList } = useContext(MainContext)
 
 
-    console.log(optionValue)
+
+    const onClickPay = () => {
+        onSetOrdersList()
+        navigate("/success")
+    }
+
+
     const onRenderPayment = () => {
 
         return (
@@ -71,7 +77,7 @@ const Payment = () => {
                     <div>
 
                         <div className="option-container">
-                            <input type="radio" id="COD" name="payment" checked={optionValue === "COD"} onChange={() => setOptionValue("COD")} />
+                            <input type="radio" id="COD" name="payment" checked={optionValue === "Cash on Delivery"} onChange={() => setOptionValue("Cash on Delivery")} />
                             <label htmlFor="COD" className="item-text">Cash on Delivery</label>
 
                         </div>
@@ -104,7 +110,7 @@ const Payment = () => {
 
 
                 <div className="cart-order-button-container">
-                    <button type="button" className="place-order-button" onClick={() => navigate("/success")}>
+                    <button type="button" className="place-order-button" onClick={onClickPay}>
                         Pay Now ₹ {totalCartPrice}
                     </button>
                 </div>

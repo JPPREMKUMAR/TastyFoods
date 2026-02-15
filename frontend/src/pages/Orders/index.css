@@ -1,0 +1,110 @@
+.orders-container {
+    padding: 30px;
+}
+
+.orders-heading {
+    color: #183b56;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: DM Sans;
+}
+
+
+.order-list-items {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.order-item {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.order-item-id {
+    color: #334155;
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    margin-top: 0px;
+}
+
+.order-item-date-string {
+    font-family: DM Sans;
+    font-size: 12px;
+    font-weight: 400;
+    color: #64748b;
+    margin: 0px;
+    letter-spacing: 0px;
+    line-height: 24px;
+}
+
+.order-details-container {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.order-details-image {
+    width: 60px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.order-details-headings-and-price-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+
+}
+
+.orders-headings-container-1 {
+    padding: 10px;
+
+}
+
+
+.order-item-name {
+    color: #334155;
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    margin-top: 0px;
+}
+
+.orders-headings-container-2 {
+    padding: 10px;
+}
+
+.hr-line-new {
+    display: block;
+}
+
+
+
+
+.orders-quntity-cost-paragraph {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: DM Sans;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
+@media screen and (min-width:576px) {
+
+    .hr-line-new {
+        display: none;
+    }
+
+}

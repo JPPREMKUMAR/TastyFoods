@@ -26,12 +26,11 @@ export const MainContextProvider = (props) => {
     const navigate = useNavigate()
 
     const [cartList, setCartList] = useState([])
-
     const [totalCartPrice, setTotalCartPrice] = useState(0)
     const [jwtToken, setJwtToken] = useState(undefined)
     const [totalItems, setTotalItems] = useState(0)
-
-    const [optionValue, setOptionValue] = useState("COD")
+    const [optionValue, setOptionValue] = useState("Cash on Delivery")
+    const [ordersList, setOrdersList] = useState([])
 
 
 
@@ -42,11 +41,11 @@ export const MainContextProvider = (props) => {
 
     useEffect(() => {
         const newList = JSON.parse(localStorage.getItem("cartData")) || []
-        // console.log(newList, "local Storage list")
+        const newOrderList = JSON.parse(localStorage.getItem("ordersData")) || []
         setCartList(newList)
+        setOrdersList(newOrderList)
         const token = Cookies.get("jwt_token")
         setJwtToken(token)
-
 
     }, [])
 
@@ -77,6 +76,9 @@ export const MainContextProvider = (props) => {
         //console.log(countItems)
 
         setTotalItems(countItems)
+
+        const newOrdersList = JSON.parse(localStorage.getItem("ordersData")) || []
+        setOrdersList(newOrdersList)
 
     }, [cartList])
 
@@ -159,11 +161,65 @@ export const MainContextProvider = (props) => {
 
 
     const clearCartList = () => {
-        localStorage.setItem("cartData", JSON.stringify([]))
+        localStorage.removeItem("cartData", JSON.stringify([]))
+        setCartList([])
         navigate("/")
         setTotalItems(0)
 
     }
+
+
+    const getPresentDateAndTime = () => {
+
+        const newDate = new Date()
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        //const dateString = newDate.getDate()
+        //console.log(dateString)
+        const hours = newDate.getHours() % 12
+        const hoursString = newDate.getHours() >= 12 ? "PM" : "AM"
+        const minutes = newDate.getMinutes()
+        const day = newDate.getDate()
+        const month = newDate.getMonth()
+        const year = newDate.getFullYear()
+        //console.log(months[month], "month")
+        //console.log(day, "day")
+        //console.log(year, "year")
+        const finalDateString = `${months[month]} ${day}, ${year} at ${hours}:${minutes} ${hoursString} `
+        //console.log(finalDateString)
+
+        return finalDateString
+
+    }
+
+
+
+
+    const onSetOrdersList = () => {
+
+        const date = getPresentDateAndTime()
+
+        const updatedCartList = cartList.map((item) => (
+            {
+                id: item.id,
+                cost: item.cost,
+                imageUrl: item.imageUrl,
+                quantity: item.quantity,
+                name: item.name,
+                rating: item.rating,
+                paymentMethod: optionValue,
+                dateString: date
+            }
+        ))
+
+
+
+        const newOrdersList = [...ordersList, ...updatedCartList]
+        localStorage.setItem("ordersData", JSON.stringify(newOrdersList))
+        setOrdersList(newOrdersList)
+        setOptionValue("Cash on Delivery")
+        clearCartList()
+    }
+
 
     return (
 
@@ -182,7 +238,9 @@ export const MainContextProvider = (props) => {
             clearCartList,
             totalItems,
             optionValue,
-            setOptionValue
+            setOptionValue,
+            ordersList,
+            onSetOrdersList
         }}>
 
             {props.children}
