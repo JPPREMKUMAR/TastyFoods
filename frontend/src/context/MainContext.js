@@ -758,14 +758,14 @@ export const MainContextProvider = (props) => {
 
 
 
-        localStorage.setItem("cartData", JSON.stringify(finalUpdatedList))
+        localStorage.setItem("cartData")
         setCartList(finalUpdatedList)
 
     }
 
 
     const clearCartList = () => {
-        localStorage.removeItem("cartData", JSON.stringify([]))
+        localStorage.removeItem("cartData")
         setCartList([])
         navigate("/")
         setTotalItems(0)
