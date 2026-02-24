@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 import Cookies from "js-cookie"
+import { toast } from "react-toastify"
+
 const MainContext = React.createContext({ sortByOptions: [] })
 
 
@@ -712,6 +714,8 @@ export const MainContextProvider = (props) => {
 
         localStorage.setItem("cartData", JSON.stringify(finalUpdatedList))
         setCartList(finalUpdatedList)
+        toast.success("new item is incremented")
+
     }
 
     const onDecrementQunatity = (newItem) => {
@@ -739,6 +743,7 @@ export const MainContextProvider = (props) => {
 
             localStorage.setItem("cartData", JSON.stringify(finalUpdatedList))
             setCartList(finalUpdatedList)
+            toast.error("new item is decremented")
         }
 
 
@@ -752,14 +757,16 @@ export const MainContextProvider = (props) => {
         for (let item of cartList) {
             if (deleteItem.id !== item.id) {
                 finalUpdatedList = [...finalUpdatedList, item]
+
             }
         }
 
 
 
 
-        localStorage.setItem("cartData")
+        localStorage.setItem("cartData", JSON.stringify(finalUpdatedList))
         setCartList(finalUpdatedList)
+        toast.error("item is deleted")
 
     }
 

@@ -5,7 +5,7 @@ import { TailSpin } from 'react-loader-spinner'
 import MainContext from '../../context/MainContext'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-
+import { toast } from "react-toastify"
 import './index.css'
 
 const Restaurant = props => {
@@ -84,6 +84,7 @@ const Restaurant = props => {
                 cost, id, imageUrl, name, rating, quantity: 1
             }
             newCartItem(cartItem)
+            toast.success("New cart item added.")
         }
 
         const isItem = cartList.filter((val) =>

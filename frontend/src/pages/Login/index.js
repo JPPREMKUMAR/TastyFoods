@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import MainContext from '../../context/MainContext'
-
+import { toast } from "react-toastify"
 import './index.css'
 
 
@@ -50,7 +50,8 @@ const Login = () => {
             setErrorMessage("")
         } else {
 
-            setErrorMessage(data.error_msg)
+            //setErrorMessage(data.error_msg)
+            toast.error(data.error_msg)
         }
     }
 

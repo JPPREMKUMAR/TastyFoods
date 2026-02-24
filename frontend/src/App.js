@@ -9,7 +9,8 @@ import Success from "./pages/Success"
 import Payment from "./pages/Payment"
 import Orders from "./pages/Orders"
 import Profile from "./pages/Profile"
-
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
 
   return (
     <>
+      <ToastContainer />
       <>
 
 
