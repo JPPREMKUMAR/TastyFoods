@@ -4,6 +4,7 @@ import MainContext from "../../context/MainContext"
 
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import { toast } from "react-toastify"
 import "./index.css"
 
 
@@ -20,7 +21,9 @@ const Payment = () => {
 
     const onClickPay = () => {
         onSetOrdersList()
+        toast.success("Payment Successful")
         navigate("/success")
+
     }
 
 
