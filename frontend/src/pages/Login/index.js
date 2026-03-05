@@ -8,8 +8,8 @@ import './index.css'
 
 const Login = () => {
 
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('rahul')
+    const [password, setPassword] = useState('rahul@2021')
     const [errorMessage, setErrorMessage] = useState('')
     const { navigate, jwtToken } = useContext(MainContext)
 
